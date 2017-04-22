@@ -1,0 +1,3 @@
+package: github.com/goadesign/examples/appengine
+import:
+- package: github.com/goadesign/goa

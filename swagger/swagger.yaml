@@ -1,0 +1,59 @@
+basePath: /
+consumes:
+- application/json
+- application/xml
+- application/gob
+- application/x-gob
+definitions:
+  Example:
+    description: example MediaType (default view)
+    example:
+      message: Hello
+    properties:
+      message:
+        example: Hello
+        type: string
+    title: 'Mediatype identifier: application/vnd.example+json; view=default'
+    type: object
+externalDocs:
+  description: goa guide
+  url: http://goa.design/getting-started.html
+host: localhost:8080
+info:
+  contact:
+    email: admin@goa.design
+    name: goa team
+    url: http://goa.design
+  description: A simple appengine example
+  license:
+    name: MIT
+    url: https://github.com/goadesign/goa/blob/master/LICENSE
+  title: The appengine example
+  version: ""
+paths:
+  /hello:
+    get:
+      operationId: hello#show
+      produces:
+      - application/vnd.goa.error
+      - application/vnd.example+json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Example'
+        "400":
+          description: Bad Request
+      schemes:
+      - http
+      summary: show hello
+      tags:
+      - hello
+produces:
+- application/json
+- application/xml
+- application/gob
+- application/x-gob
+schemes:
+- http
+swagger: "2.0"
